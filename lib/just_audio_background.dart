@@ -711,6 +711,12 @@ class _PlayerAudioHandler extends BaseAudioHandler
   }
 
   @override
+  Future<void> onTaskRemoved() {
+    stop();
+    super.onTaskRemoved();
+  }
+
+  @override
   Future<void> stop() async {
     if (_justAudioEvent.processingState == ProcessingStateMessage.idle) {
       return;
