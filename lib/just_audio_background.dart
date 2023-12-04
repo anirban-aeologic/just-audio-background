@@ -711,9 +711,10 @@ class _PlayerAudioHandler extends BaseAudioHandler
   }
 
   @override
-  Future<void> onTaskRemoved() {
+  Future<void> onTaskRemoved() async {
     stop();
     super.onTaskRemoved();
+    return Future.value();
   }
 
   @override
